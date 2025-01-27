@@ -1,0 +1,48 @@
+.user-list {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    width: 100%;
+}
+
+.table-wrapper {
+    width: 100%; /* Table takes full width on larger screens */
+    display: none; /* Initially hide the table */
+}
+
+.user-cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+/* Styles for medium and larger screens (table view) */
+@media (min-width: 768px) {
+    .table-wrapper {
+        display: block; /* Show the table */
+    }
+    .user-cards {
+        display: none; /* Hide the cards */
+    }
+}
+
+/* Styles for smaller screens (cards) */
+@media (max-width: 767px) {
+    .user-list {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+    .user-cards {
+        display: flex;
+        gap: 10px;
+    }
+    .user-card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+        width: 90%; /* Occupy most of the width on small screens */
+        max-width: 400px; /* Set a maximum width */
+    }
+    /* ... other mobile styles from previous response ... */
+}
